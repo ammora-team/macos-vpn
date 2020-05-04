@@ -1,8 +1,8 @@
 import { Options } from './interfaces';
 
-export default (options: Options): void => {};
+export default (_options: Options): void => {};
 
-export const connect = (username: string, password: string): boolean => {
+export const connect = (_username: string, _password: string): boolean => {
   return true;
 };
 
