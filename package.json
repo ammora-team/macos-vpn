@@ -47,6 +47,9 @@
     "husky": "4.2.5",
     "typescript": "~3.8.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npx lint-staged"
