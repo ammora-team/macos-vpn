@@ -1,0 +1,56 @@
+{
+  "name": "@ammora/macos-vpn",
+  "version": "0.0.1",
+  "description": "",
+  "license": "ISC",
+  "main": "lib/vpn.js",
+  "types": "lib/vpn.d.ts",
+  "homepage": "https://github.com/ammora-team/macos-vpn#readme",
+  "keywords": [
+    "vpn"
+  ],
+  "bugs": {
+    "url": "https://github.com/ammora-team/macos-vpn/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammora-team/macos-vpn.git"
+  },
+  "scripts": {
+    "lint": "eslint src/**/*",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ffi": "github:lxe/node-ffi#node-12",
+    "nodobjc": "github:getcommande/NodObjC#electron-5",
+    "ref": "github:lxe/ref#node-12",
+    "ref-struct": "github:lxe/ref-struct#node-12"
+  },
+  "devDependencies": {
+    "@types/node": "13.13.4",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.12.0",
+    "eslint": "^6.5.1",
+    "eslint-config-standard-with-typescript": "^16.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.0.5",
+    "husky": "4.2.5",
+    "typescript": "~3.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.ts?(x)": [
+      "eslint",
+      "git add"
+    ]
+  }
+}
