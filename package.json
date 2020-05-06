@@ -7,7 +7,8 @@
   "types": "lib/vpn.d.ts",
   "homepage": "https://github.com/ammora-team/macos-vpn#readme",
   "files": [
-    "lib"
+    "lib",
+    "vendor"
   ],
   "keywords": [
     "vpn"
@@ -22,7 +23,7 @@
   "scripts": {
     "lint": "eslint src/**/*",
     "build": "tsc",
-    "prerelease": "npm run build",
+    "prerelease": "rimraf lib/* && npm run build",
     "release": "npx semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -43,8 +44,9 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^2.0.5",
     "husky": "4.2.5",
+    "prettier": "^2.0.5",
+    "rimraf": "3.0.2",
     "typescript": "~3.8.0"
   },
   "publishConfig": {
