@@ -31,14 +31,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@jedmao/semantic-release-npm-github-config": "^1.0.9",
     "ffi": "github:lxe/node-ffi#node-12",
     "nodobjc": "github:getcommande/NodObjC#electron-5",
     "ref": "github:lxe/ref#node-12",
-    "ref-struct": "github:lxe/ref-struct#node-12",
-    "semantic-release": "^17.0.7"
+    "ref-struct": "github:lxe/ref-struct#node-12"
   },
   "devDependencies": {
+    "@jedmao/semantic-release-npm-github-config": "^1.0.9",
     "@types/node": "13.13.4",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.12.0",
@@ -52,6 +51,7 @@
     "husky": "4.2.5",
     "prettier": "^2.0.5",
     "rimraf": "3.0.2",
+    "semantic-release": "^17.0.7",
     "typescript": "~3.8.0"
   },
   "publishConfig": {
