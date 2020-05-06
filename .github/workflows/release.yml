@@ -6,16 +6,20 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
           node-version: "10.x"
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run build
-      - run: npx semantic-release
+      - name: Install dependecies
+        run: npm ci
+      - name: QA
+        run: npm run lint
+      - name: Build
+        run: npm run build
+      - name: Publish
+        run: npx semantic-release
         env:
             GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}s
