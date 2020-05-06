@@ -1,8 +1,10 @@
 import { Options } from './interfaces';
 
+const path = require('path'); // eslint-disable-line
+
 export const $ = require('nodobjc'); // eslint-disable-line
 
-$.import('./vendor/VPNManager.framework');
+$.import(path.join(__dirname, '../vendor/VPNManager.framework'));
 
 export class Bridge {
   private vpnManager: any;
