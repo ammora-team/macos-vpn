@@ -65,8 +65,7 @@
   "release": {
     "extends": "@jedmao/semantic-release-npm-github-config",
     "branches": [
-      "master",
-      "next"
+      "master"
     ]
   },
   "lint-staged": {
