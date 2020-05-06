@@ -2,7 +2,7 @@
   "name": "@ammora/macos-vpn",
   "version": "0.0.0-dev",
   "description": "Bridge NodeObjC to access NetworkingExtensions",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/vpn.js",
   "types": "lib/vpn.d.ts",
   "homepage": "https://github.com/ammora-team/macos-vpn#readme",
@@ -11,7 +11,10 @@
     "vendor"
   ],
   "keywords": [
-    "vpn"
+    "vpn",
+    "objc",
+    "macos",
+    "osc"
   ],
   "bugs": {
     "url": "https://github.com/ammora-team/macos-vpn/issues"
@@ -61,11 +64,6 @@
   },
   "release": {
     "extends": "@jedmao/semantic-release-npm-github-config",
-    "plugins": [
-      "@semantic-release/npm", {
-        "allowSameVersion": true
-      }
-    ],
     "branches": [
       "master",
       "next"
