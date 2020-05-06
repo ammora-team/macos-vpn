@@ -24,22 +24,24 @@
     "lint": "eslint src/**/*",
     "build": "tsc",
     "prerelease": "rimraf lib/* && npm run build",
-    "release": "npx semantic-release",
+    "release": "semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@jedmao/semantic-release-npm-github-config": "^1.0.9",
     "ffi": "github:lxe/node-ffi#node-12",
     "nodobjc": "github:getcommande/NodObjC#electron-5",
     "ref": "github:lxe/ref#node-12",
-    "ref-struct": "github:lxe/ref-struct#node-12"
+    "ref-struct": "github:lxe/ref-struct#node-12",
+    "semantic-release": "^17.0.7"
   },
   "devDependencies": {
     "@types/node": "13.13.4",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.12.0",
     "eslint": "^6.5.1",
-    "eslint-config-standard-with-typescript": "^16.0.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard-with-typescript": "^16.0.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
@@ -56,6 +58,13 @@
     "hooks": {
       "pre-commit": "npx lint-staged"
     }
+  },
+  "release": {
+    "extends": "@jedmao/semantic-release-npm-github-config",
+    "branches": [
+      "master",
+      "next"
+    ]
   },
   "lint-staged": {
     "**/*.ts?(x)": [
