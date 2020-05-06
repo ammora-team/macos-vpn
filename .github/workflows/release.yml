@@ -18,6 +18,8 @@ jobs:
         run: npm ci
       - name: Run lint
         run: npm run lint
+      - name: Build
+        run: npm run build
       - name: Release
         # uses: cycjimmy/semantic-release-action@v2
         env:
