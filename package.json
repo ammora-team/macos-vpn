@@ -31,10 +31,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "ffi": "github:lxe/node-ffi#node-12",
-    "nodobjc": "github:getcommande/NodObjC#electron-5",
-    "ref": "github:lxe/ref#node-12",
-    "ref-struct": "github:lxe/ref-struct#node-12"
+    "nodobjc": "github:ammora-team/NodObjC#node-12"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
