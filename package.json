@@ -31,7 +31,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "nodobjc": "github:ammora-team/NodObjC#node-12"
+    "nodobjc": "github:ammora-team/NodObjC#2c8363e"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
