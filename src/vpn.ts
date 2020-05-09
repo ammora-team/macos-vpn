@@ -4,16 +4,30 @@ const path = require('path'); // eslint-disable-line
 
 export const $ = require('@ammora/nodobjc'); // eslint-disable-line
 
-const importFramework = (): void => {
-  $.import(path.join(__dirname, '..', 'VPNManager.framework'));
-}
-
 export class Bridge {
   private vpnManager: any;
 
+  private readonly options: any;
+
   constructor(options: Options) {
-    importFramework();
+    const optionsDefault = {
+      log: console
+    };
+
+    this.options = { ...optionsDefault, ...options };
+
+    this.importFramework();
     this.create(options);
+  }
+
+  private get log(): any {
+    return this.options.log;
+  }
+
+  private importFramework(): void {
+    $.import(path.join(__dirname, '..', 'VPNManager.framework'));
+
+    this.log.info('VPNManager Framework import');
   }
 
   /* get isConnected(): boolean {
@@ -28,10 +42,13 @@ export class Bridge {
     const json = JSON.stringify(options);
     this.vpnManager = $.VPNManager('alloc')('initWithJson', $(json));
 
+    this.log.info('VPNManager created');
+
     return this;
   }
 
   connect(username: string, password: string): boolean {
+    // @todo get exception
     this.vpnManager('connect', $(username), 'password', $(password));
 
     return true;
