@@ -2,7 +2,7 @@ import { Options } from './interfaces';
 
 const path = require('path'); // eslint-disable-line
 
-export const $ = require('nodobjc'); // eslint-disable-line
+export const $ = require('@ammora/nodobjc'); // eslint-disable-line
 
 $.import(path.join(__dirname, '../vendor/VPNManager.framework'));
 
