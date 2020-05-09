@@ -8,7 +8,7 @@
   "homepage": "https://github.com/ammora-team/macos-vpn#readme",
   "files": [
     "lib",
-    "vendor"
+    "VPNManager.framework"
   ],
   "keywords": [
     "vpn",

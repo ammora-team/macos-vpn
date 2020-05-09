@@ -4,12 +4,15 @@ const path = require('path'); // eslint-disable-line
 
 export const $ = require('@ammora/nodobjc'); // eslint-disable-line
 
-$.import(path.join(__dirname, '../vendor/VPNManager.framework'));
+const importFramework = (): void => {
+  $.import(path.join(__dirname, '..', 'VPNManager.framework'));
+}
 
 export class Bridge {
   private vpnManager: any;
 
   constructor(options: Options) {
+    importFramework();
     this.create(options);
   }
 
