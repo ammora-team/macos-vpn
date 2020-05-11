@@ -3,11 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>19E266</string>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
-	<key>CFBundleExecutable</key>
-	<string>VPNManager</string>
+	<string>19E287</string>
 	<key>CFBundleIdentifier</key>
 	<string>ammora.VPNManager</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -16,14 +12,12 @@
 	<string>VPNManager</string>
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>0.0</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -41,6 +35,6 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>10.15</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2020 Ramon. All rights reserved.</string>
+	<string>MIT</string>
 </dict>
 </plist>
