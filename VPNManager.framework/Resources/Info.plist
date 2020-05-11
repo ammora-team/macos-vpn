@@ -4,6 +4,8 @@
 <dict>
 	<key>BuildMachineOSBuild</key>
 	<string>19E287</string>
+	<key>CFBundleExecutable</key>
+	<string>VPNManager</string>
 	<key>CFBundleIdentifier</key>
 	<string>ammora.VPNManager</string>
 	<key>CFBundleInfoDictionaryVersion</key>
