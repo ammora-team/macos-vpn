@@ -1,4 +1,4 @@
-import { Options } from './interfaces';
+import { Config, Options } from './interfaces';
 
 const path = require('path'); // eslint-disable-line
 
@@ -7,32 +7,40 @@ export const $ = require('@ammora/nodobjc'); // eslint-disable-line
 export class Bridge {
   private vpnManager: any;
 
-  private readonly options: any;
+  private readonly config?: Config = {};
 
-  constructor(options: Options) {
-    const optionsDefault = {
-      log: console
-    };
-
-    this.options = { ...optionsDefault, ...options };
+  constructor(options: Options, config?: Config) {
+    this.config = config;
 
     this.importFramework();
     this.create(options);
   }
 
   private get log(): any {
-    return this.options.log;
+    let log = this.config?.log;
+
+    if (log === null || log === undefined) {
+      log = console;
+    }
+
+    if (typeof log.info !== 'function') {
+      throw new Error('Log invalid');
+    }
+
+    return log;
   }
 
   private importFramework(): void {
-    $.import(path.join(__dirname, '..', 'VPNManager.framework'));
+    let frameworkPath = this.config?.frameworkPath;
+
+    if (frameworkPath === null || frameworkPath === undefined) {
+      frameworkPath = path.join(__dirname, '..');
+    }
+
+    $.import(path.join(frameworkPath, 'VPNManager.framework'));
 
     this.log.info('VPNManager Framework import');
   }
-
-  /* get isConnected(): boolean {
-    return this.vpnManager('isConnected');
-  } */
 
   get manager(): any {
     return this.vpnManager;
@@ -55,5 +63,5 @@ export class Bridge {
   }
 }
 
-export default (options: Options): Bridge =>
-  new Bridge(options);
+export default (options: Options, config?: Config): Bridge =>
+  new Bridge(options, config);

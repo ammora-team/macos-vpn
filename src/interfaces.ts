@@ -4,5 +4,9 @@ export interface Options {
   server: string;
   remoteId: string;
   localId?: string;
+}
+
+export interface Config {
   log?: any;
+  frameworkPath?: string;
 }
