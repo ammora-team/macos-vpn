@@ -58,6 +58,7 @@ export class Bridge {
   connect(username: string, password: string): boolean {
     // @todo get exception
     this.vpnManager('connect', $(username), 'password', $(password));
+    this.log.info('VPNManager created');
 
     return true;
   }
