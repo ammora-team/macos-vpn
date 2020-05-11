@@ -1,6 +1,6 @@
 {
   "name": "@ammora/macos-vpn",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Bridge NodeObjC to access NetworkingExtensions",
   "license": "MIT",
   "main": "lib/vpn.js",
