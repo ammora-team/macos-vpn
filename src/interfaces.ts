@@ -1,4 +1,4 @@
-export interface Options {
+export interface ConnectOptions {
   description: string;
   protocol: 'ikev2';
   server: string;

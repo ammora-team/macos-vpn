@@ -1,4 +1,4 @@
-import { Config, Options } from './interfaces';
+import { Config, ConnectOptions } from './interfaces';
 
 const path = require('path'); // eslint-disable-line
 
@@ -9,7 +9,7 @@ export class Bridge {
 
   private readonly config?: Config = {};
 
-  constructor(options: Options, config?: Config) {
+  constructor(options: ConnectOptions, config?: Config) {
     this.config = config;
 
     this.importFramework();
@@ -46,7 +46,7 @@ export class Bridge {
     return this.vpnManager;
   }
 
-  create(options: Options): this {
+  create(options: ConnectOptions): this {
     const json = JSON.stringify(options);
     this.vpnManager = $.VPNManager('alloc')('initWithJson', $(json));
 
@@ -63,5 +63,7 @@ export class Bridge {
   }
 }
 
-export default (options: Options, config?: Config): Bridge =>
+export default (options: ConnectOptions, config?: Config): Bridge =>
   new Bridge(options, config);
+
+export { ConnectOptions };
