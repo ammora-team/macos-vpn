@@ -55,12 +55,19 @@ export class Bridge {
     return this;
   }
 
-  connect(username: string, password: string): boolean {
-    // @todo get exception
-    this.vpnManager('connect', $(username), 'password', $(password));
-    this.log.info('VPNManager connected');
+  connect(username: string, password: string): void {
+    // @todo async/await
+    const block = $(function(_self: any, isSuccess: any) {
+      // @todo get NSError
+      if (isSuccess === true) {
+        this.log.info('VPNManager connected');
+        return;
+      }
 
-    return true;
+      this.log.info(`VPNManager error`);
+    }, ['v',['?','B']]);
+
+    this.vpnManager('connect', $(username), 'password', $(password), 'complete', block);
   }
 }
 

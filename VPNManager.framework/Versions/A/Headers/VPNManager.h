@@ -9,6 +9,18 @@
 
 @end
 
+@class VPNManagerError;
+
+@interface VPNManagerError : NSObject
+
+@property (nonatomic, class, readonly) int Load;
+
+@property (nonatomic, class, readonly) int Save;
+
+@property (nonatomic, class, readonly) int Start;
+
+@end
+
 @class VPNManager;
 
 @interface VPNManager : NSObject
@@ -19,7 +31,7 @@
 
 - (id) initWithJson:(NSString *) jsonString;
 
-- (void) connect:(NSString*)userName password:(NSString*)password;
+- (void) connect:(NSString*)userName password:(NSString*)password complete: (void(^)(bool))handler;
 
 - (bool) disconnect;
 
