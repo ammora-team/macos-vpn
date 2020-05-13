@@ -37,7 +37,10 @@ export class Bridge {
       frameworkPath = path.join(__dirname, '..');
     }
 
-    $.import(path.join(frameworkPath, 'VPNManager.framework'));
+    const fwPath: string = path.join(frameworkPath, 'VPNManager.framework');
+    this.log.info('VPNManager Framework path: ' + fwPath);
+
+    $.import(fwPath);
 
     this.log.info('VPNManager Framework import');
   }
