@@ -62,6 +62,7 @@ export class Bridge {
     // @todo async/await
     const block = $(function(_self: any, isSuccess: any) {
       // @todo get NSError
+      this.log.info('VPNManager connecting');
       if (isSuccess === true) {
         this.log.info('VPNManager connected');
         return;
