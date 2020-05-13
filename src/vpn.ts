@@ -60,15 +60,16 @@ export class Bridge {
 
   connect(username: string, password: string): void {
     // @todo async/await
+    const self = this; // eslint-disable-line
     const block = $(function(_self: any, isSuccess: any) {
       // @todo get NSError
-      this.log.info('VPNManager connecting');
+      self.log.info('VPNManager connecting');
       if (isSuccess === true) {
-        this.log.info('VPNManager connected');
+        self.log.info('VPNManager connected');
         return;
       }
 
-      this.log.info(`VPNManager error`);
+      self.log.info(`VPNManager error`);
     }, ['v',['?','B']]);
 
     this.vpnManager('connect', $(username), 'password', $(password), 'complete', block);
